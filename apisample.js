@@ -50,7 +50,7 @@ async function getdata(title, apikey, ticketprice){
 
 async function getCPME(title){
 
-    //user input for movie title. values for apikey and ticketprice. 
+    // values for apikey and ticketprice. 
     
     let apikey = '2ed75b81';
     let ticketprice =  12.99;
