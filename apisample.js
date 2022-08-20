@@ -23,6 +23,11 @@ async function getdata(title, apikey, ticketprice){
         return response
     })
 
+    if(res.data.Error==='Movie not found!'){
+        console.log(res.data.Error);
+        return; 
+    }
+
     //gets rating and runtime for film
     let rating = res.data.Ratings[1].Value; 
     let runtime = res.data.Runtime; 
@@ -50,13 +55,18 @@ async function getdata(title, apikey, ticketprice){
 
 async function getCPME(title){
 
-    //user input for movie title. values for apikey and ticketprice. 
+    //values for apikey and ticketprice. 
     
     let apikey = '2ed75b81';
     let ticketprice =  12.99;
 
     //calling getdata function to retrieve cost per minute enjoyed. 
     let CPME = await getdata(title, apikey, ticketprice);
+
+    let type = typeof CPME;
+    if(type !== 'number'){
+        return;
+    }
 
     console.log("Cost per minute enjoyed of", title, "is", Math.round(CPME*100), "cents")
 }
