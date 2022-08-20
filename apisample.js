@@ -43,10 +43,9 @@ async function getdata(title, apikey, ticketprice){
     runtime = runtime.toString().replace(" min", "");
     runtime = parseInt(runtime);
 
-    //calculates the percentage of minutes enjoyed based on the runtime and Rotten Tomatoes score. 
+    //calculates the number of minutes enjoyed based on the runtime and Rotten Tomatoes score. 
     let minutesEnjoyed = rating * runtime; 
-    //caluclates the cost of minute enjoyed - based on the average movie ticket price in  Vancouver
-    // and the above minutesEnjoyed value
+    //caluclates the cost of minute enjoyed - based on the average movie ticket price in  Vancouver  and the above minutesEnjoyed value
     let costPerMinutesEnjoyed = ticketprice / minutesEnjoyed; 
 
     return costPerMinutesEnjoyed;
