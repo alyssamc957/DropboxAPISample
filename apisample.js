@@ -4,6 +4,7 @@
 
 const axios = require('axios');
 
+const title = 'Ruby Sparks'
 
 async function getdata(title, apikey, ticketprice){
 
@@ -47,10 +48,10 @@ async function getdata(title, apikey, ticketprice){
 }   
 
 
-async function getCPME(){
+async function getCPME(title){
 
     //user input for movie title. values for apikey and ticketprice. 
-    let title = 'The Godfather';
+    
     let apikey = '2ed75b81';
     let ticketprice =  12.99;
 
@@ -60,4 +61,4 @@ async function getCPME(){
     console.log("Cost per minute enjoyed of", title, "is", Math.round(CPME*100), "cents")
 }
 
-getCPME();
+getCPME(title);
